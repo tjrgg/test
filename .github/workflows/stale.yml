@@ -12,3 +12,5 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           stale-label: "status: stale"
+          days-before-close: 30
+          days-before-stale: 7
