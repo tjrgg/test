@@ -1,0 +1,14 @@
+name: "Stale Check"
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: tjrgg/action-stale@master
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          stale-label: "status: stale"
