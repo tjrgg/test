@@ -1,0 +1,14 @@
+name: "Lock Closed"
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: tjrgg/action-lock@master
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          days-before-lock: 1
